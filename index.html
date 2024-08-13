@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="3style.css">
+
+</head>
+<body>
+    <button id="xtsDrawerToggle" class="xts-drawer-toggle is-close hidden-lg hidden-md hidden-sm" aria-label="Call">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="fa fa-times" aria-hidden="true" style="display: none"></i>
+    </button>
+    <div style="display:none;" id="xtsDrawer" class="xts-mobile-drawer">
+        <ul>
+            <li>
+                <a title="Home" href="/home">Home</a>
+            </li>
+
+            <li>
+                <a title="How it works" href="/howitworks">How it works</a>
+            </li>
+            <li>
+                <a title="Become a pro" href="/becomeapro">Work with us</a>
+            </li>
+
+                <li>
+                    <a title="Login" href="/accounts/login" class="login-btn">Login</a>
+                </li>
+                <li>
+                    <a title="Signup" href="/accounts/signup" class="signup-btn">Sign up</a>
+                </li>
+        </ul>
+    </div>
+    <div id="videoPopup" class="xts-video-popup-wrapper hidden" style="display: none;">
+        <div class="xts-video-popup">
+            <span class="xts-close"><i class="fa fa-close"></i></span>
+            <div class="xts-video-player"></div>
+        </div>
+    </div>
+    <div id="xtsContentWrapper">
+        
+        <header>
+            <meta name="ahrefs-site-verification" content="588331d6a95bd38c54b1340ef8190735e0e741e0af82ae3fe4700caad9106a68">
+            <div class="xts-header-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+                            <ul>
+                                <li>
+                                    <span>Language</span>
+                                </li>
+                                <li>
+                                    <a title="Urdu" href="javascript:void(0)" onclick="setLanguage('ur-PK')">
+                                        <img loading="lazy" src="/Content/images/kamkaj/pak-icon.png" alt="urdu" width="50" height="30">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="English" href="javascript:void(0)" onclick="setLanguage('en-US')"><img src="/Content/images/kamkaj/usa-icon.png" alt="english" width="50" height="30"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xts-header-menu-new">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-4 col-sm-3 col-xs-12">
+                            <div class="logo">
+                                <a title="Logo" href="/"><img loading="lazy" src="/Content/images/kamkajV2/logo.png" alt="logo" title="Logo" width="150" height="45"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-8 col-sm-9 col-xs-12 hidden-xs">
+                            <ul id="nav">
+                                    <li>
+                                        <a title="Why KamKaj" href="/whykamkaj">Why KamKaj</a>
+                                    </li>
+                                    <li>
+                                        <a title="Track my order" href="/trackorder">Track my order</a>
+                                    </li>
+                                    <li>
+                                        <a title="Work with us" href="/becomeapro">Work with us</a>
+                                    </li>
+                                    <li>
+                                        <div class="call-area">
+                                            <a id="callNow" href="tel:03041111526" title="+923041111526" aria-label="Call"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                                            
+                                        </div>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+            
+        <section class="xts-banner-with-form xts-home-banner main-search" data-type="city">
+            <div class="xts-banner-bg" style="background-image: url('/Content/images/kamkajV2/slider-bg-gray.png')">
+                <div class="xts-banner-content-area">
+                    <div class="container">
+                        <div class="row xts-d-flex-center">
+                            <div class="col-lg-8 col-md-8">
+                                <h1><span>Skilled Professional</span> At Your Doorstep.</h1>
+                                <p><b>Kam Kaj is a leading multiple service provider company catering to your 360 needs with quality guaranteed.</b></p>
+                                <p>
+                                    The aim and priority of Kam Kaj are to add value to our consumers' lives by providing smart solutions to all their problems. Our pride is providing the most extensive range of services. From home maintenance to personal assistance. We make sure that your safety is never compromised. This is why we hire all the staff under the roof of Kam Kaj, just for your satisfaction.
+                                </p>
+                                <div class="xts-banner-search-form mainPageSearchBar w-75">
+                                    <div class="w-200px">
+                                        <select id="City" class="xts-cities" aria-label="Select City" onchange="cityselection()">
+                                                <option selected="" value="Karachi">Karachi</option>
+                                                <option value="Lahore">Lahore</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-100">
+                                        <input id="Program" type="text" placeholder="Choose a type of service" autocomplete="off">
+                                        <span class="xts-required-program hidden" style="display:none;">Service is required</span>
+                                        <button class="btn btn-block" id="btn-search" aria-label="btn-search"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+    <form action="/hirepro/postjobfromprogram" data-ajax="true" data-ajax-begin="onPosting" data-ajax-method="Post" data-ajax-success="onPosted" id="job-form" method="post" novalidate="novalidate" role="form" data-role="validator">                                <input id="Longitude" name="Longitude" type="hidden" value="67.0104">
+                                    <input id="Latitude" name="Latitude" type="hidden" value="24.8608">
+                                    <input id="IpAddress" name="IpAddress" type="hidden" value="202.47.41.111">
+                                    <div class="xts-book-services pull-left">
+                                        <h2>Book your service</h2>
+                                        <div class="form-group">
+                                            <input id="LeadCampaignName" name="LeadCampaignName" type="hidden">
+                                            <input id="HdnPlatformName" name="HdnPlatformName" type="hidden">
+                                            <input id="JobProgramId" name="JobProgramId" hidden="" type="text">
+                                            <input id="LeadSource" name="LeadSource" value="Web Home Form" hidden="" type="text">
+                                            <input id="JobName" name="JobName" type="text" data-val="true" placeholder="Name" class="form-control" data-val-required="Name field is required" autocomplete="nop">
+                                            <span class="field-validation-valid" data-valmsg-for="JobName" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="JobMobile" id="JobMobile" data-mask="00000000000" placeholder="03XXXXXXXXX" onkeyup="onphonekeyup(this)" class="form-control xts-mask xts-mobile-number" type="text" maxlength="11" autocomplete="off">
+                                            <input name="JobMobileNumber" data-val="true" id="JobMobileNumber" class="form-control xts-mask" type="hidden" data-val-required="Mobile field is required">
+                                            <span class="field-validation-valid" data-valmsg-for="JobMobileNumber" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group service-field">
+                                            <span class="k-widget k-combobox k-header" style=""><span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default"><input name="subprogram_input" class="k-input" type="text" autocomplete="off" title="" role="combobox" aria-expanded="false" placeholder="Select Service" tabindex="0" aria-disabled="false" aria-readonly="false" aria-autocomplete="list" aria-owns="subprogram_listbox" aria-busy="false" aria-activedescendant="316ce76a-6aa2-47f9-9585-705b7bf48ec0" style="width: 100%;"><span tabindex="-1" unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s" role="button" tabindex="-1" aria-controls="subprogram_listbox">select</span></span></span><input class="" data-val="true" data-val-required="Service field is required" id="subprogram" name="subprogram" type="text" data-role="combobox" style="display: none;" aria-disabled="false" aria-readonly="false"></span>
+                                            <span class="field-validation-valid" data-valmsg-for="subprogram" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <select id="JobCity1" name="JobCity1" onchange="onCityChange()" class="form-control">
+                                                <option value="">Select City</option>
+                                                    <option value="Karachi">Karachi</option>
+                                                    <option value="Lahore">Lahore</option>
+                                            </select>
+                                            <input id="JobCity" name="JobCity" type="hidden" data-val="true" data-val-required="City field is required">
+                                            <span class="field-validation-valid" data-valmsg-for="JobCity" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group post-job-area hidden">
+                                            <span class="k-widget k-combobox k-header" style=""><span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default"><input name="JobArea_input" class="k-input" type="text" autocomplete="off" title="" role="combobox" aria-expanded="false" placeholder="Area" tabindex="0" aria-disabled="false" aria-readonly="false" aria-autocomplete="list" aria-owns="JobArea_listbox" style="width: 100%;"><span tabindex="-1" unselectable="on" class="k-select"><span unselectable="on" class="k-icon k-i-arrow-s" role="button" tabindex="-1" aria-controls="JobArea_listbox">select</span></span></span><input data-val="true" data-val-required="Area field is required" id="JobArea" name="JobArea" type="text" data-role="combobox" style="display: none;" aria-disabled="false" aria-readonly="false"></span>
+                                            <span class="field-validation-valid" data-valmsg-for="JobArea" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="JobAddress" name="JobAddress" type="text" data-val="true" placeholder="Address" class="form-control" data-val-required="Address field is required" autocomplete="nop">
+                                            <span class="field-validation-valid" data-valmsg-for="JobAddress" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-block xts-btn-anm" type="submit">Request a Call</button>
+                                        </div>
+                                    </div>
+    </form>                        </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+            
+            
+    
+    
+    
+        <section class="xts-home-category">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center xts-section-heading">
+                        <h2>Our Top Services</h2>
+                        <p>Kam Kaj provides ultimate installations, repairs, maintenance, and grooming services at your doorstep.</p>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/home-appliance-repair">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/55c9e57ab87e4926bd0be4a27e4001b6.png" loading="lazy" alt="Home Appliance Repair" title="Home Appliance Repair" width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Home Appliance Repair</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/salon-at-home">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/326c1719a1c24d41b6a6c924a23b3fd9.png" loading="lazy" alt="Salon At Home " title="Salon At Home " width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Salon At Home </strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/cleaning-services">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/375cfb9cd9494d26942295416bfa2eec.png" loading="lazy" alt="Cleaning Services" title="Cleaning Services" width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Cleaning Services</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/electrical-services">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/8216d4a5dc1849e0a9481a3296ac8c0b.png" loading="lazy" alt="Electrical Services" title="Electrical Services" width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Electrical Services</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/plumbing-services">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/b2d7a5dda363450b850acf0fdfc472df.png" loading="lazy" alt="Plumbing Services" title="Plumbing Services" width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Plumbing Services</strong>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                            <a title="Top Programs" href="/pr/pest-control-services">
+                                <div class="category-tile">
+                                    <img src="https://kamkaj.azureedge.net/image/577817227d6c478e85ee7183669f1485.png" loading="lazy" alt="Pest Control Services" title="Pest Control Services" width="40" height="40" onerror="this.onerror=null;this.src='../Content/images/kamkajV2/no-image.png';">
+                                    <strong>Pest Control Services</strong>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section class="xts-home-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center xts-section-heading">
+                        <h2>Recommended Services</h2>
+                        <p>
+                            Services highly recommended by our valuable customers.
+                        </p>
+                    </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/ac-install-and-repair-services">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/6324e4e7bff2435080b492e4ff312176.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/6324e4e7bff2435080b492e4ff312176.jpg&quot;);">
+                                            <h2>
+                                                AC Install and Repair Services
+                                            </h2>
+                                            <p>Kam Kaj offers the ultimate, reliable solution for all your AC repair needs. Our comprehensive servi...</p>
+                                            <button onclick="window.location.href='/p/ac-install-and-repair-services'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/sofa-cleaning">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/70f9617602be44feab837d4187acedf9.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/70f9617602be44feab837d4187acedf9.jpg&quot;);">
+                                            <h2>
+                                                Sofa Cleaning
+                                            </h2>
+                                            <p>Restore the comfort and charm of your furniture with our professional sofa cleaning service with our...</p>
+                                            <button onclick="window.location.href='/p/sofa-cleaning'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/carpet-cleaning">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/b43b956f2c134597a7e6d3b81bbaa2ad.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/b43b956f2c134597a7e6d3b81bbaa2ad.jpg&quot;);">
+                                            <h2>
+                                                Carpet Cleaning
+                                            </h2>
+                                            <p>Transform your carpets from dull to dazzling with our expert carpet cleaning. Our advanced technique...</p>
+                                            <button onclick="window.location.href='/p/carpet-cleaning'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/deep-cleaning-service">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/881acb4e91ea4d2f858999e2cb84b8b5.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/881acb4e91ea4d2f858999e2cb84b8b5.jpg&quot;);">
+                                            <h2>
+                                                Deep Cleaning Service
+                                            </h2>
+                                            <p>Experience the ultimate clean with our thorough deep cleaning service. From hidden nooks to high-tra...</p>
+                                            <button onclick="window.location.href='/p/deep-cleaning-service'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/washing-machine-repair">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/d6a654160ea543208ed7073a4a7928cc.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/d6a654160ea543208ed7073a4a7928cc.jpg&quot;);">
+                                            <h2>
+                                                Washing Machine Repair
+                                            </h2>
+                                            <p>Are appliance troubles disrupting your life? Like washing machines?  Show your appliances some care ...</p>
+                                            <button onclick="window.location.href='/p/washing-machine-repair'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/refrigerator-and-deep-freezer-repair">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/a56765af1a2c49afb1cec0aebe58ddc5.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/a56765af1a2c49afb1cec0aebe58ddc5.jpg&quot;);">
+                                            <h2>
+                                                Refrigerator and Deep Freezer Repair
+                                            </h2>
+                                            <p>Our skilled technicians are well-versed in repairing a variety of refrigerator and deep freezer mode...</p>
+                                            <button onclick="window.location.href='/p/refrigerator-and-deep-freezer-repair'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/microwave-repair">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/1870088f213c4580b2ad7f8b4ad064ab.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/1870088f213c4580b2ad7f8b4ad064ab.jpg&quot;);">
+                                            <h2>
+                                                Microwave Repair
+                                            </h2>
+                                            <p>Kam Kaj offers top-notch microwave repair services at your doorstep. Our skilled technicians are exp...</p>
+                                            <button onclick="window.location.href='/p/microwave-repair'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/pest-control-services">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/07964f17b8c24e05871d8811a8632e63.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/07964f17b8c24e05871d8811a8632e63.jpg&quot;);">
+                                            <h2>
+                                                Pest  Control Services
+                                            </h2>
+                                            <p>Kam Kaj provides top-notch fumigation services to ensure your home/office is pest-free and safe. Our...</p>
+                                            <button onclick="window.location.href='/p/pest-control-services'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/makeup">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/e5104591341a4d719a9b1deaf75cbfa7.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/e5104591341a4d719a9b1deaf75cbfa7.jpg&quot;);">
+                                            <h2>
+                                                Makeup
+                                            </h2>
+                                            <p>Discover the best makeup services with Kam Kaj. Our team of skilled beauticians is committed to deli...</p>
+                                            <button onclick="window.location.href='/p/makeup'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/waxing">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/74064106f3914bd68bcd4545168da69a.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/74064106f3914bd68bcd4545168da69a.jpg&quot;);">
+                                            <h2>
+                                                Waxing
+                                            </h2>
+                                            <p>Enjoy the convenience of complete body waxing services right in the comfort of your own home. Kam Ka...</p>
+                                            <button onclick="window.location.href='/p/waxing'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/facial">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/b7106f3ecf7e4fc3a575791137b72e58.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/b7106f3ecf7e4fc3a575791137b72e58.jpg&quot;);">
+                                            <h2>
+                                                Facial
+                                            </h2>
+                                            <p>Kam Kaj takes pride in offering luxurious at-home facial services, delivered by our team of seasoned...</p>
+                                            <button onclick="window.location.href='/p/facial'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 xts-margin-top-15px">
+                                    <a href="/p/water-tank-cleaning">
+                                        <div class="xts-services-tile xts-bg-div-img" data-lazaybgimage="https://kamkaj.azureedge.net/image/d785bc99676d4dbabdd268c011e69b70.jpg" style="background-image: url(&quot;https://kamkaj.azureedge.net/image/d785bc99676d4dbabdd268c011e69b70.jpg&quot;);">
+                                            <h2>
+                                                Water Tank Cleaning
+                                            </h2>
+                                            <p>Water tanks should be inspected regularly and cleaned when necessary. Low circulation water sources ...</p>
+                                            <button onclick="window.location.href='/p/water-tank-cleaning'">Book Now</button>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                </div>
+            </div>
+        </section>
+    
+    
+    
+    
+        <section class="xts-home-customer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center xts-section-heading">
+                        <h2>Customer Experience</h2>
+                        <p class="m-0">Valuable customers sharing their reviews after availing our services.</p>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+            
+                    </ul>
+                </div>
+                <div class="col-lg-5 text-right">
+                    <ul class="xts-store-icon">
+                        <li>
+                            <strong>Mobile App</strong>
+                        </li>
+                        <li>
+                            <a target="_blank" title="iPhone app" href="https://apps.apple.com/us/app/kam-kaj/id1438803567"><i class="fa fa-apple"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" title="Android app" href="https://play.google.com/store/apps/details?id=com.kamkaj.connect"><i class="fa fa-android"></i></a>
+    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+        </div>
+        <div class="xts-footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <p class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">Copyright © 2017 - 2024 Kam Kaj. Kam Kaj logo and related marks are registered Trademarks of Kam Kaj.</p>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <ul>
+                            <li><a title="Privacy" href="/privacy">Privacy Policy</a></li>
+                            <li><a title="Term of use" href="/terms">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    
+    <footer class="xts-footer">
+        <div class="footer-detail">
+            <img loading="lazy" src="/content/images/kamkajV2/logo-light.png" width="100" alt="logo-light" title="logo-light" height="29">
+            <p class="py-2 m-0">
+                When it comes to Kam Kaj, the object of the word 'Kam' reflects our motive to add value to our customers' lives by providing all the essential services in their day-to-day lives. On the other hand, the word 'Kaj' highlights our motive to reduce the unemployment from Pakistan by hiring in-house staff whom we train in any given skills.
+            </p>
+        </div>
+        <div class="xts-footer-accordion">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne" title="Company">
+                            Company
+                            <i class="fa fa-sort-down"></i>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul>
+                                <li><a title="About us" href="/about">About Us</a></li>
+                                <li><a title="Why Kamkaj" href="/whykamkaj">Why Kam Kaj</a></li>
+                                <li><a title="Career" href="/careers">Careers</a></li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" title="Customers" data-toggle="collapse" href="#collapseTwo">
+                            Customers
+                            <i class="fa fa-sort-down"></i>
+                        </a>
+    
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul>
+                                <li><a title="How it works" href="/howitworks">How it works</a></li>
+                                <li><a title="Work with us" href="/becomeapro">Work with us</a></li>
+                                <li><a title="Customers login" href="/accounts/login">Customers Login</a></li>
+                                <li><a title="Customer sign up" href="/accounts/signup">Customers Sign up</a></li>
+                                <li><a title="Safety" href="/safety">Safety</a></li>
+                                <li><a title="iPhone app" href="https://apps.apple.com/us/app/kam-kaj/id1438803567">iPhone app</a></li>
+                                <li><a title="Android app" href="https://play.google.com/store/apps/details?id=com.kamkaj.connect">Android app</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree" title="Pro">
+                            Pro
+                            <i class="fa fa-sort-down"></i>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul>
+                                <li><a title="Become a pro" href="/becomeapro">Work with us</a></li>
+                                <li><a title="iPhone app" href="/ComingSoon/AppComingSoon">iPhone app</a></li>
+                                <li><a title="Android app" href="https://play.google.com/store/apps/details?id=com.kamkaj.connect">Android app</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour" title="Support">
+                            Support
+                            <i class="fa fa-sort-down"></i>
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul>
+                                <li><a title="Contac us" href="/contact">Contact Us</a></li>
+                                <li><a title="Contact number" href="tel:03041111526">0304-111-1526</a></li>
+                                <li><a title="Click here to email" href="mailto:support@kamkaj.pk">support@kamkaj.pk</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    
+
+</body>
+</html>
